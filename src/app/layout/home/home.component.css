@@ -1,0 +1,14 @@
+.container {
+  margin-top: 45px;
+}
+button.button.btn-info {
+  float: right;
+  padding: 13px;
+  /* align-items: unset; */
+  width: -25px;
+  /* align-content: center; */
+}
+form.container.ng-pristine.ng-valid.ng-touched {
+  background-color: yellow;
+  color: red;
+}

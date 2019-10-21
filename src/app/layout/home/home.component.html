@@ -1,0 +1,166 @@
+<!-- <div > -->
+    <button class="btn btn-primary float-right" (click)="open(Addpopup)">Add Articles</button>&nbsp;&nbsp;
+    <div class="x">
+
+      <header class="header">
+       <div class="col-md-3">
+    <input type="text" #f (keyup)="search(f.value)" placeholder="serch here">
+  </div>
+     </header>
+   </div>
+<div class="container">
+    <table class="table table-dark">
+
+    <thead>
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">article Name</th>
+        <th scope="col">Content</th>
+        <th scope="col">Created By</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of all_arr;let i=index;">
+        <th scope="row">1</th>
+        <td>{{item.articleName}}</td>
+        <td>{{item.createdDate}}</td>
+        <td>{{item.createdBy}}</td>
+        <td>
+
+          <button class="button btn-primary" (click)="open(Edit,i)">Edit</button>&nbsp;
+          <button class="button btn-danger" (click)="onDelete(item)">Delete</button>
+           <!-- <button class="button btn-danger" (click)="open(readmore)">ReadMore</button> -->
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+<!-- <ngb-pagination [collectionSize]="12" [maxSize]="5" [boundaryLinks]="true"></ngb-pagination> -->
+
+</div>
+
+
+      <ng-template #Addpopup let-modal>
+      <br>
+
+      <form [formGroup]="AddForm" class="container" (ngSubmit)="OnAddArticleSave()">
+      <h4>Add Article</h4>
+      <div class="container">
+      <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-6">
+      <label><b>Article Name</b></label>
+      <input formControlName="articleName" type="text" class="form-control">
+      </div>
+      </div>
+      </div>
+
+      <div class="container">
+      <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-6">
+      <label><b>Content</b></label>
+      <input formControlName="content" type="text" class="form-control">
+      </div>
+      </div>
+      </div>
+
+      <div class="container">
+          <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-6">
+          <label><b>CreatedBy</b></label>
+          <input formControlName="createdBy" type="text" class="form-control">
+          </div>
+          </div>
+          </div>
+
+      <br>
+      <div class="container">
+      <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-6">
+      <button class="btn btn-primary" type="submit">Submit</button>&nbsp;
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+      </div>
+      </div>
+      </div><br>
+      <br>
+      </form>
+      </ng-template>
+
+
+
+      <!-- edit popup -->
+
+      <ng-template #Edit let-modal>
+      <br>
+      <form [formGroup]="AddForm" class="container" >
+      <h4>Edit Article</h4>
+      <div class="container">
+      <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-6">
+      <label><b>Article Name</b></label>
+      <input formControlName="articleName" type="text" class="form-control">
+      </div>
+      </div>
+      </div>
+
+      <div class="container">
+      <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-6">
+      <label><b>Content</b></label>
+      <input formControlName="content" type="text" class="form-control">
+      </div>
+      </div>
+      </div>
+      <div class="container">
+          <div class="row">
+          <div class="col-xs-6 col-sm-4 col-md-6">
+          <label><b>CreatedBy</b></label>
+          <input formControlName="createdBy" type="text" class="form-control">
+          </div>
+          </div>
+          </div>
+      <br>
+      <div class="container">
+      <div class="row">
+      <div class="col-xs-6 col-sm-4 col-md-6">
+      <button class="btn btn-primary" type="submit">Submit</button>&nbsp;
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+
+      </div>
+      </div>
+      </div><br>
+      <br>
+      </form>
+      </ng-template>
+
+
+<ng-template #readmore letmodel>
+
+    <div class="card text-center">
+    <div class="card-header">
+    {{arrReadMore?.articleName}}
+    </div>
+    <div class="card-body">
+    <h5 class="card-title" [innerHTML]='arrReadMore?.content'></h5>
+    <p class="card-text"></p>
+    <a href="#" class="btn btn-primary">Edit</a>
+    </div>
+    <div class="card-footer text-muted">
+    2 days ago
+    </div>
+    </div>
+    </ng-template>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <pre>Current page: {{page}}</pre> -->
+

@@ -1,0 +1,30 @@
+<div  class="container" style="background-color:#f1f1f1">
+  <div class="row">
+  <form  [formGroup]="Signup">
+
+<h1 class="bg-info">Welcome To Login Page</h1>
+
+      <div class="form-contol">
+        <label for="uname"><b>Username</b></label>&nbsp; &nbsp;
+        <input   class="form-group" type="text"  formControlName="username" placeholder="Enter Username"  r>
+        <!-- <label class="alert alert-danger"   *ngIf="this.Signup.get('username').hasError('required') ">Enter Username</label> -->
+      </div>
+
+      <div class="form-contol">
+        <label for="psw"><b>Password</b></label> &nbsp; &nbsp;
+        <input class="form-group"    type="password" formControlName="password" placeholder="Enter Password">
+        <!-- <label class="alert alert-danger"  *ngIf="this.Signup.get('username').hasError('required')">Enter Username</label> -->
+      </div>
+
+
+      <div class=" form-Control">
+        <button  class="btn btn-primary" type="submit"  (click)="onSave()">Login</button>&nbsp; &nbsp;
+        <button type="button" class="btn btn-primary"  (click)="onSave1()">Cancel</button>
+
+      </div>
+
+
+
+  </form>
+</div>
+  </div>
