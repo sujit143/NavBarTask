@@ -9,11 +9,14 @@ import { LoginComponent } from './login/login.component';
 // import { NgbdModalBasic } from '@angular/modal-basic';
 import { HttpClientModule } from "@angular/common/http";
 import { routerModule } from './app.routing';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import {SidebarModule} from 'primeng/sidebar';
 import { GallaryComponent } from './gallary/gallary.component';
 // import { NavComponent } from './nav/nav.component';
+import {EditorModule} from 'primeng/editor';
+import {AccordionModule} from 'primeng/accordion';
+
 
 
 @NgModule({
@@ -34,7 +37,8 @@ import { GallaryComponent } from './gallary/gallary.component';
 
   ],
   imports: [
-    BrowserModule,routerModule,NgbModule,NgbPaginationModule, NgbAlertModule,ReactiveFormsModule,HttpClientModule,SidebarModule
+    BrowserModule,routerModule,NgbModule,NgbPaginationModule,FormsModule,
+     NgbAlertModule,ReactiveFormsModule,HttpClientModule,SidebarModule,EditorModule,AccordionModule
 
   ],
   providers: [],

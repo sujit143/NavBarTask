@@ -9,10 +9,10 @@ export class Team3Service {
   currentuser;
   isAdmin: boolean;
 
-  url="https://3df52e24.ngrok.io/api/KB/GetArticles?getall=0&categ=";
-  add_article:string="https://3df52e24.ngrok.io/api/KB/InsertUpdateKBAricles";
-  URLfetchDataById = 'https://3df52e24.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
-  URLInsertUpdate = 'https://3df52e24.ngrok.io/api/KB/InsertUpdateKBAricles';
+  url="https://1c26c933.ngrok.io/api/KB/GetArticles?getall=0&categ=";
+  add_article:string="https://1c26c933.ngrok.io/api/KB/InsertUpdateKBAricles";
+  URLfetchDataById = 'https://1c26c933.ngrok.io/api/KB/GetKBArticlesById?ArticleId=';
+  URLInsertUpdate = 'https://1c26c933.ngrok.io/api/KB/InsertUpdateKBAricles';
 
   getAllData(){
      return this._http.get(this.url);
